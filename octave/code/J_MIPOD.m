@@ -67,7 +67,7 @@ function [ S_STRUCT , pChange, ChangeRate , Deflection ] = Embed(C_STRUCT , Payl
 % Part of this code have been based on Matlab Implementation of MIPOD
 
 % XXX
-spatial = imread(C_STRUCT)(:,:,1);
+%spatial = imread(C_STRUCT)(:,:,1);
 
 % Read the JPEG image if needed
 if ischar( C_STRUCT )
@@ -79,13 +79,13 @@ end
 
 % XXX
 
-C_SPATIAL = double(spatial);
+%C_SPATIAL = double(spatial);
 %C_SPATIAL(1:11, 1)
-wiener2(C_SPATIAL,[2,2])(1:21, 1)
+%wiener2(C_SPATIAL,[2,2])(1:21, 1)
 
 % Compute Variance in spatial domain ....
 WienerResidual = C_SPATIAL - wiener2(C_SPATIAL,[2,2]);
-WienerResidual(1:21,1)
+% WienerResidual(1:21,1)
 Variance = VarianceEstimationDCT2D(WienerResidual,3,3);
 
 % ... and apply the covariance transformation to DCT domain
