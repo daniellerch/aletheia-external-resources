@@ -1,4 +1,4 @@
-function J_MiPOD(cover, payload, stego)
+function J_MiPOD_COLOR(cover, payload, stego)
 [stegoStruct , pChange , ChangeRate , Deflection]=Embed(cover, payload);
 jpeg_write(stegoStruct, stego)
 end
