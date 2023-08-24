@@ -152,6 +152,7 @@ for index_color=1:3
    pChange = reshape(beta,size(C_COEFFS));
 
    S_STRUCT.coef_arrays{index_color} = S_COEFFS;
+end
 
 S_STRUCT.dc_huff_tables = {};
 S_STRUCT.ac_huff_tables = {};  
