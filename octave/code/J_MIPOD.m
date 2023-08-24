@@ -1,4 +1,9 @@
-function [ S_STRUCT , pChange, ChangeRate , Deflection ] = J_MIPOD (C_STRUCT , Payload)
+function J_MiPOD(cover, payload, stego)
+[stegoStruct , pChange , ChangeRate , Deflection]=Embed(cover, payload);
+jpeg_write(stegoStruct, stego)
+end
+
+function [ S_STRUCT , pChange, ChangeRate , Deflection ] = Embed(C_STRUCT , Payload)
 % -------------------------------------------------------------------------
 % J_MiPOD Embedding       |      February 2021       |      version 1.0
 % -------------------------------------------------------------------------
