@@ -81,7 +81,6 @@ wiener2(C_SPATIAL,[2,2])(1:21, 1)
 % Compute Variance in spatial domain ....
 WienerResidual = C_SPATIAL - wiener2(C_SPATIAL,[2,2]);
 WienerResidual(1:21,1)
-exit(0);
 Variance = VarianceEstimationDCT2D(WienerResidual,3,3);
 
 % ... and apply the covariance transformation to DCT domain
