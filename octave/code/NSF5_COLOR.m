@@ -36,12 +36,9 @@ for index_color=1:3
 	ALPHA=1;
 	if ALPHA>0
 	    %%% embedding simulation
-        embedding_efficiency = payload/invH(payload);  % bound on embedding efficiency
-	    nAC = nnz(DCT); % number of nonzero AC DCT coefficients
+       embedding_efficiency = payload/invH(payload);  % bound on embedding efficiency
 	    nzAC = nnz(DCT)-nnz(DCT(1:8:end,1:8:end)); % number of nonzero AC DCT coefficients
-        changes = ceil(payload*nzAC/embedding_efficiency); % number of changes nsF5 would make on bound
-	    ALPHA=changes/nzAC;
-	    embedding_efficiency = ALPHA/invH(ALPHA); % bound on embedding efficiency
+       changes = ceil(payload*nzAC/embedding_efficiency); % number of changes nsF5 would make on bound
 	    changeable = (DCT~=0); % mask of all nonzero DCT coefficients in the image
 	    changeable(1:8:end,1:8:end) = false; % do not embed into DC modes
 	    changeable = find(changeable); % indexes of the changeable coefficients
