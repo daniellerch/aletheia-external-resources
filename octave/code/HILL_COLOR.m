@@ -5,7 +5,7 @@ function stego = HILL_COLOR(cover_path, payload)
    for index_color=1:3
       x = cover_3ch(:,:,index_color);
       cost=f_cal_cost(x);
-      stego(:,:,index_color) = f_sim_embedding(x, cost, payload, H);
+      stego(:,:,index_color) = f_sim_embedding(x, cost, payload);
    end
 end
 
