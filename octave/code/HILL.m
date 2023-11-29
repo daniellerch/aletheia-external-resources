@@ -2,7 +2,7 @@ function stego = HILL(cover_path, payload)
 H=0; 
 x = imread(cover_path);
 cost=f_cal_cost(x);
-stego=f_sim_embedding(x, cost, payload, H);
+stego=f_sim_embedding(x, cost, payload);
 end
 
 
